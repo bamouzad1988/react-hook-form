@@ -4,6 +4,7 @@ import Form3 from "./component/form3";
 import Form4 from "./component/form4";
 import Form5 from "./component/form5";
 import FormYup from "./component/yup";
+import Form6 from "./component/form6";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Form4 />
       <Form5 />
       <FormYup />
+      <Form6 />
     </div>
   );
 }
