@@ -17,6 +17,7 @@ export default function Form6() {
       onSubmit={handleSubmit(console.log)}
       className="p-4 flex flex-col bg-lime-50"
     >
+      <h1>checkbox</h1>
       <input
         {...register("firstName", { required: true })}
         placeholder="First name"

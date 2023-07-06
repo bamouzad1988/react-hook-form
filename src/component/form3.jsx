@@ -28,6 +28,7 @@ const Form3 = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="p-4 bg-slate-200">
+      <h1>create components</h1>
       <Input label="First Name" register={register} required />
       <Select label="Age" {...register("Age")} />
       <input

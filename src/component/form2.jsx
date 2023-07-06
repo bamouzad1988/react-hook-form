@@ -6,6 +6,7 @@ export default function Form1() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="p-4 bg-slate-300">
+      <h1>regex</h1>
       <input
         className="m-2"
         {...register("firstName", {
