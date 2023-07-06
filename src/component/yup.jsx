@@ -4,7 +4,10 @@ import * as yup from "yup";
 
 const schema = yup
   .object({
-    firstName: yup.string("test").required("req"),
+    firstName: yup
+      .string("test")
+      .required("req")
+      .matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed for this field "),
     age: yup.number("sss").positive("++").integer("int").required("req"),
   })
   .required();
@@ -21,11 +24,12 @@ export default function FormYup() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="p-4 bg-sky-400">
-      <input {...register("firstName")} />
-      <p>{errors.firstName?.message}</p>
+      <h1>yup</h1>
+      <input {...register("firstName")} placeholder="name" />
+      <p className="text-red-700">{errors.firstName?.message}</p>
 
-      <input {...register("age")} />
-      <p>{errors.age?.message}</p>
+      <input {...register("age")} placeholder="age" />
+      <p className="text-red-700">{errors.age?.message}</p>
 
       <input
         type="submit"

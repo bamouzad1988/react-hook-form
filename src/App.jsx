@@ -14,8 +14,8 @@ function App() {
       <Form3 />
       <Form4 />
       <Form5 />
-      <FormYup />
       <Form6 />
+      <FormYup />
     </div>
   );
 }

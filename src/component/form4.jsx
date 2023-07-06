@@ -5,22 +5,32 @@ import { Input } from "@mui/material";
 import { MenuItem } from "@mui/material";
 
 const Form4 = () => {
-  const { control, handleSubmit } = useForm({
+  const {
+    control,
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm({
     defaultValues: {
       firstName: "",
       select: {},
     },
   });
   const onSubmit = (data) => console.log(data);
-  const { register } = useForm();
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <h1>Controller</h1>
       <Controller
         name="firstName"
         control={control}
         rules={{ required: true }}
         render={({ field }) => <Input {...field} />}
       />
+      {errors.firstName?.type === "required" && (
+        <p role="alert" className="text-red-900">
+          First name is required
+        </p>
+      )}
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"

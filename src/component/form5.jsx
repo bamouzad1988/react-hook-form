@@ -13,6 +13,7 @@ export default function Form5() {
       onSubmit={handleSubmit(onSubmit)}
       className="p-4 bg-slate-400 flex justify-between"
     >
+      <h1>error handler</h1>
       <input
         {...register("firstName", { required: true, minLength: 5 })}
         aria-invalid={errors.firstName ? "true" : "false"}
